@@ -591,7 +591,9 @@ class Type(object):
             if self.value:
                 return "map of %s%s-%s pairs" % (quantity, keyName, valueName)
             else:
-                if keyName.endswith('s'):
+                if keyName.lower() == 'chassis':
+                    plural = ''
+                elif keyName.endswith('s'):
                     plural = keyName + "es"
                 else:
                     plural = keyName + "s"
